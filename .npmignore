@@ -17,6 +17,7 @@ public
 tests
 postcss.config.js
 webpack.config.babel.js
+examples
 
 # tests
 test
