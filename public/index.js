@@ -5,12 +5,23 @@ import './assets/style.scss';
 
 const Button = connect((props) => {
   return (
-    <button
-      onClick={() => {
-        props.present('aaa');
-      }}>
-      Open
-    </button>
+    <React.Fragment>
+      <button
+        className="button"
+        onClick={() => {
+          props.$modal.present('modal1');
+        }}>
+        Open modal
+      </button>
+
+      <button
+        className="button"
+        onClick={() => {
+          props.$modal.present('modal2');
+        }}>
+        Open Modal2
+      </button>
+    </React.Fragment>
   );
 });
 
@@ -20,7 +31,10 @@ class App extends React.Component {
     return (
       <div className="app-container">
         <ReactModalManager context={ctx}>
-          My App Running
+          <h2 style={{ marginBottom: 20 }}>My Modals App</h2>
+          <center>
+            <img src="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" />
+          </center>
           <Button />
         </ReactModalManager>
       </div>

@@ -1,4 +1,4 @@
-import nx from '@feizheng/next-js-core2';
+import { get } from 'lodash';
 
 export default class {
   constructor(inModals, inContext) {
@@ -18,10 +18,10 @@ export default class {
   }
 
   visible(inName) {
-    return nx.get(this.modals, `${inName}.visible`) || false;
+    return get(this.modals, `${inName}.visible`, false);
   }
 
   data(inName) {
-    return nx.get(this.modals, `${inName}.data`) || false;
+    return get(this.modals, `${inName}.data`, false);
   }
 }

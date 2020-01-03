@@ -4,16 +4,18 @@
 }
 html,
 body,
-#app,
-.app-container {
+#app{
   height: 100%;
 }
 
 @import "@/components/style.scss";
 
 .app-container {
-  padding: 50px;
   box-sizing: border-box;
+  border: 4px dashed #ccc;
+  width: 80%;
+  margin: 40px auto;
+  padding: 50px;
   .button {
     background: #3cc51f;
     width: 100%;
@@ -21,7 +23,7 @@ body,
     margin-bottom: 10px;
     border-radius: 10px;
     color: #fff;
-    padding: 20px;
+    padding: 10px;
     border: none;
 
     &:active {
@@ -31,5 +33,13 @@ body,
     &:focus {
       outline: none;
     }
+  }
+}
+
+.ReactModalPortal{
+  button{
+    width: 100%;
+    padding:10px;
+    background: #f00;
   }
 }

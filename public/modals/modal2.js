@@ -11,17 +11,19 @@ const customStyles = {
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    background: '#eee'
   }
 };
 export default connect((props) => {
   return (
-    <ReactModal style={customStyles} isOpen={props.$modal.visible('modal1')}>
-      <p>I am modal - modal1</p>
+    <ReactModal style={customStyles} isOpen={props.$modal.visible('modal2')}>
+      <h2>Modal2</h2>
+      <p>I am modal - modal2</p>
       <button
         className="button"
         onClick={(e) => {
-          props.$modal.dismiss('modal1');
+          props.$modal.dismiss('modal2');
         }}>
         Close
       </button>

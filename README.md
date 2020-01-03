@@ -28,35 +28,52 @@ npm update @feizheng/react-modal-manager
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactModalManager, { connect } from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactModalManager from '@feizheng/react-modal-manager';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import './assets/style.scss';
+
+  const Button = connect((props) => {
+    return (
+      <React.Fragment>
+        <button
+          className="button"
+          onClick={() => {
+            props.$modal.present('modal1');
+          }}>
+          Open modal
+        </button>
+
+        <button
+          className="button"
+          onClick={() => {
+            props.$modal.present('modal2');
+          }}>
+          Open Modal2
+        </button>
+      </React.Fragment>
+    );
+  });
+
+  class App extends React.Component {
+    render() {
+      const ctx = require.context('./modals/', true, /\.js$/);
       return (
-        <ReactModalManager />
-      )
+        <div className="app-container">
+          <ReactModalManager context={ctx}>
+            <h2 style={{ marginBottom: 20 }}>My Modals App</h2>
+            <center>
+              <img src="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" />
+            </center>
+            <Button />
+          </ReactModalManager>
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
   ```
 
 ## documentation
 - https://afeiship.github.io/react-modal-manager/
-
-## resources
-- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-- https://www.valentinog.com/blog/react-webpack-babel/
-- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
-- https://testing-library.com/docs/react-testing-library/api
-
-## todos
-- [ ] Add: semver number for every build files.
-- [ ] Add: need output css files.
-- [ ] Add: PWA support for docs.
-- [ ] Add: source.map file for dist(`you can upload for production debug`).
-- [ ] BUG: npm run dev will clean dist.

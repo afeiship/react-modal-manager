@@ -34,16 +34,8 @@ export default class extends Component {
     const { children, context } = this.props;
     const callback = context;
     const keys = context.keys();
-    const store = {
-      modals: this.store.modals,
-      present: this.store.present.bind(this.store),
-      dismiss: this.store.dismiss.bind(this.store),
-      visible: this.store.visible.bind(this.store),
-      data: this.store.data.bind(this.store)
-    };
-
     return (
-      <ModalContext.Provider value={store}>
+      <ModalContext.Provider value={{ $modal: this.store }}>
         {children}
         {keys.map((item) => {
           return React.createElement(callback(item).default, { key: item });
