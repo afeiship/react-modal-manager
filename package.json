@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-modal-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A cool modal manager for react.",
   "main": "dist/index.js",
   "scripts": {
