@@ -15,6 +15,7 @@ export default class extends Component {
   static propTypes = {
     className: PropTypes.string,
     context: PropTypes.func.isRequired,
+    name: PropTypes.string,
     inject: PropTypes.func
   };
 
@@ -24,9 +25,9 @@ export default class extends Component {
 
   constructor(inProps) {
     super(inProps);
-    const { inject } = inProps;
+    const { inject, name } = inProps;
     this.state = { modals: {} };
-    this.store = new Store(this.state.modals, this);
+    this.store = new Store(this.state.modals, this, name);
     inject(this.store);
   }
 

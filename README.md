@@ -12,11 +12,12 @@ npm update @feizheng/react-modal-manager
 ```
 
 ## properties
-| property  | type     | default | description           |
-| --------- | -------- | ------- | --------------------- |
-| className | String   | -       | The extened className |
-| value     | Function | -       | The require.context   |
-| inject    | Function | -       | The injector for app  |
+| property  | type     | default | description                    |
+| --------- | -------- | ------- | ------------------------------ |
+| className | String   | -       | The extened className          |
+| value     | Function | -       | The require.context            |
+| inject    | Function | -       | The injector for app           |
+| name      | String   | -       | The default dynamic modal name |
 
 ## usage
 1. import css
