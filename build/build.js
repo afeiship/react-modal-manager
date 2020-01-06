@@ -16,6 +16,7 @@ export default merge(baseConfig, {
   }),
   externals: externals.base({
     '@feizheng/noop': '@feizheng/noop',
+    'event-mitt':'event-mitt',
     lodash: 'lodash'
   }),
   plugins: [plugins.clean(), plugins.copyStyles()]

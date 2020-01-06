@@ -67,6 +67,7 @@
     "react-dom": "^16.8.5"
   },
   "dependencies": {
+    "@feizheng/event-mitt": "^2.0.3",
     "@feizheng/noop": "^1.0.0",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
