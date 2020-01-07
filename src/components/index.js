@@ -14,7 +14,7 @@ export default class extends Component {
   static version = '__VERSION__';
   static propTypes = {
     className: PropTypes.string,
-    context: PropTypes.func.isRequired,
+    context: PropTypes.func,
     name: PropTypes.string,
     inject: PropTypes.func
   };
@@ -33,6 +33,7 @@ export default class extends Component {
 
   render() {
     const { children, context } = this.props;
+    if (!context) return null;
     const callback = context;
     const keys = context.keys();
     return (
