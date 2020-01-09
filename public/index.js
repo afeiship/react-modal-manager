@@ -1,9 +1,9 @@
-import ReactModalManager, { connect } from '../src/main';
+import ReactModalManager, { modal } from '../src/main';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import './assets/style.scss';
 
-const Button = connect((props) => {
+const Button = modal((props) => {
   return (
     <React.Fragment>
       <button

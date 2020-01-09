@@ -1,3 +1,3 @@
 import ReactModalManager from './components';
 export default ReactModalManager;
-export const connect = require('./components/lib/connect').default;
+export const modal = require('./components/lib/connect').default;
