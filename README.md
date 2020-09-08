@@ -99,7 +99,7 @@ npm update @feizheng/react-modal-manager
             }}>
             <h2 style={{ marginBottom: 20 }}>My Modals App</h2>
             <center className="mb-4">
-              <img src="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" />
+              <img src="https://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" />
             </center>
             <Button />
           </ReactModalManager>
