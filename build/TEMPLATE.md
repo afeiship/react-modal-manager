@@ -16,9 +16,6 @@ npm install -S @feizheng/react-modal-manager
 npm update @feizheng/react-modal-manager
 ```
 
-## properties
-__GENERATE_DOCS__
-
 ## usage
 1. import css
   ```scss

@@ -1,4 +1,3 @@
-const rmp = require('@feizheng/react-markdown-props');
 const fs = require('fs');
 const indentString = require('indent-string');
 
@@ -21,7 +20,6 @@ nx.declare({
       const docApp = fs.readFileSync('./public/index.js').toString();
 
       nx.replaceInFile('README.md', [
-        ['__GENERATE_DOCS__', rmp('./src/components/index.js')],
         ['__GENERATE_DAPP__', indentString(docApp, 2)],
         ['../src/main', '@feizheng/react-modal-manager']
       ]);
