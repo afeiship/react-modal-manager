@@ -38,7 +38,11 @@ class App extends React.Component {
     const ctx = require.context('./modals/', true, /\.js$/);
     return (
       <div className="app-container">
-        <ReactModalManager context={ctx}>
+        <ReactModalManager
+          context={ctx}
+          inject={(e) => {
+            window.store = e;
+          }}>
           <h2 style={{ marginBottom: 20 }}>My Modals App</h2>
           <center>
             <img src="http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg" />
