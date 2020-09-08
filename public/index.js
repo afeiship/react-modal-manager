@@ -6,6 +6,18 @@ import ReactDOM from 'react-dom';
 import ReactModalManager, { modal } from '../src/main';
 import './assets/style.scss';
 
+const code = `
+/* ---- Run in console ---- */
+
+// show modal1
+store.present('modal1');
+
+// show modal1 with data
+store.present('modal1',{ key:"1", key2: "2" });
+
+// hide modal1
+store.present('modal1');
+`;
 
 const Button = modal((props) => {
   return (
@@ -63,6 +75,10 @@ class App extends React.Component {
           </center>
           <Button />
         </ReactModalManager>
+
+        <pre>
+          <code className="w-full p-2">{code}</code>
+        </pre>
 
         <ReactSwUpdateTips value={this.state.hasUpdate} />
         <ReactGithubCorner value="https://github.com/afeiship/react-modal-manager" />
