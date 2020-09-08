@@ -1,6 +1,6 @@
-import ReactModalManager, { modal } from '../src/main';
-import ReactDOM from 'react-dom';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactModalManager, { modal } from '../src/main';
 import './assets/style.scss';
 
 const Button = modal((props) => {
@@ -20,6 +20,14 @@ const Button = modal((props) => {
           props.$modal.present('modal2');
         }}>
         Open Modal2
+      </button>
+
+      <button
+        className="button"
+        onClick={() => {
+          props.$modal.present('dir1/dir2/dir3/modal');
+        }}>
+        Model in deep path
       </button>
     </React.Fragment>
   );

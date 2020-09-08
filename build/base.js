@@ -1,8 +1,8 @@
 import {
   configs,
   inputs,
-  outputs,
   loaders,
+  outputs,
   plugins
 } from '@feizheng/webpack-lib-kits';
 
@@ -15,7 +15,15 @@ export default {
     alias: configs.alias()
   },
   module: {
-    rules: [loaders.babel(), loaders.image(), loaders.sass(), loaders.version()]
+    rules: [
+      loaders.babel(),
+      loaders.image(),
+      loaders.sass(),
+      loaders.version()
+    ]
   },
-  plugins: [plugins.minCssExtract()]
+  plugins: [
+    plugins.progressBar(),
+    plugins.minCssExtract()
+  ]
 };

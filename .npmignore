@@ -9,6 +9,7 @@ Rakefile
 **/npm-debug.log
 **/node_modules
 
+bin
 src
 docs
 build
@@ -17,7 +18,12 @@ public
 tests
 postcss.config.js
 webpack.config.babel.js
+example
 examples
+
+# vscode
+jsconfig.json
+.history
 
 # tests
 test
