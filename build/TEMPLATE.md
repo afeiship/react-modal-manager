@@ -11,11 +11,6 @@
 npm install -S @feizheng/react-modal-manager
 ```
 
-## update
-```shell
-npm update @feizheng/react-modal-manager
-```
-
 ## usage
 1. import css
   ```scss

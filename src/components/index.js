@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from '@feizheng/noop';
-import objectAssign from 'object-assign';
 import Store from './lib/store';
 import ModalContext from './lib/context';
 
@@ -13,14 +12,31 @@ export default class extends Component {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
+    /**
+     * The model required context pattern.
+     */
     context: PropTypes.func,
+    /**
+     * The only shared model name.
+     */
     name: PropTypes.string,
-    inject: PropTypes.func
+    /**
+     * Callback when you want to inject to some other object.
+     */
+    inject: PropTypes.func,
+    /**
+     * If your app has ready.
+     */
+    ready: PropTypes.bool
   };
 
   static defaultProps = {
-    inject: noop
+    inject: noop,
+    ready: true
   };
 
   constructor(inProps) {
@@ -32,16 +48,17 @@ export default class extends Component {
   }
 
   render() {
-    const { children, context } = this.props;
+    const { children, context, ready } = this.props;
     if (!context) return null;
     const callback = context;
     const keys = context.keys();
     return (
       <ModalContext.Provider value={{ $modal: this.store }}>
         {children}
-        {keys.map((item) => {
-          return React.createElement(callback(item).default, { key: item });
-        })}
+        {ready &&
+          keys.map((item) =>
+            React.createElement(callback(item).default, { key: item })
+          )}
       </ModalContext.Provider>
     );
   }
