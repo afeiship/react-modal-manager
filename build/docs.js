@@ -3,7 +3,7 @@ import {
   outputs,
 
   plugins
-} from '@feizheng/webpack-lib-kits';
+} from '@jswork/webpack-lib-kits';
 import OfflinePlugin from 'offline-plugin';
 import merge from 'webpack-merge';
 import baseConfig from './base';

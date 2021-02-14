@@ -1,5 +1,5 @@
 import { get } from 'lodash';
-import EventMitt from '@feizheng/event-mitt';
+import EventMitt from '@jswork/event-mitt';
 
 export default class {
   constructor(inModals, inContext, inName) {

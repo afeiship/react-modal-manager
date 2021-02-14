@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from '@feizheng/noop';
+import noop from '@jswork/noop';
 import Store from './lib/store';
 import ModalContext from './lib/context';
 

@@ -32,4 +32,4 @@ __tests__
 jest.config.js
 jest.setup.js
 
-
+.release-it.json

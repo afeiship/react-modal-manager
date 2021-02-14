@@ -8,13 +8,19 @@
 
 ## installation
 ```shell
-npm install -S @feizheng/react-modal-manager
+npm install -S @jswork/react-modal-manager
 ```
+
+## properties
+__GENERATE_DOCS__
 
 ## usage
 1. import css
   ```scss
-  @import "~@feizheng/react-modal-manager/dist/style.scss";
+  @import "~@jswork/react-modal-manager/dist/style.css";
+
+  // or use sass
+  @import "~@jswork/react-modal-manager/dist/style.scss";
 
   // customize your styles:
   $react-modal-manager-options: ()
@@ -31,14 +37,14 @@ __GENERATE_DAPP__
 ## license
 Code released under [the MIT license](https://github.com/afeiship/react-modal-manager/blob/master/LICENSE.txt).
 
-[version-image]: https://img.shields.io/npm/v/@feizheng/react-modal-manager
-[version-url]: https://npmjs.org/package/@feizheng/react-modal-manager
+[version-image]: https://img.shields.io/npm/v/@jswork/react-modal-manager
+[version-url]: https://npmjs.org/package/@jswork/react-modal-manager
 
-[license-image]: https://img.shields.io/npm/l/@feizheng/react-modal-manager
+[license-image]: https://img.shields.io/npm/l/@jswork/react-modal-manager
 [license-url]: https://github.com/afeiship/react-modal-manager/blob/master/LICENSE.txt
 
-[size-image]: https://img.shields.io/bundlephobia/minzip/@feizheng/react-modal-manager
+[size-image]: https://img.shields.io/bundlephobia/minzip/@jswork/react-modal-manager
 [size-url]: https://github.com/afeiship/react-modal-manager/blob/master/dist/react-modal-manager.min.js
 
-[download-image]: https://img.shields.io/npm/dm/@feizheng/react-modal-manager
-[download-url]: https://www.npmjs.com/package/@feizheng/react-modal-manager
+[download-image]: https://img.shields.io/npm/dm/@jswork/react-modal-manager
+[download-url]: https://www.npmjs.com/package/@jswork/react-modal-manager

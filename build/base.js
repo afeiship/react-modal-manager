@@ -4,7 +4,7 @@ import {
   loaders,
   outputs,
   plugins
-} from '@feizheng/webpack-lib-kits';
+} from '@jswork/webpack-lib-kits';
 
 export default {
   mode: configs.mode(),

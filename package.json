@@ -1,24 +1,36 @@
 {
-  "name": "@feizheng/react-modal-manager",
-  "version": "1.3.2",
+  "name": "@jswork/react-modal-manager",
+  "version": "1.0.0",
   "description": "A cool modal manager for react.",
   "main": "dist/index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack -p",
+    "postbuild": "node-sass src/components/style.scss dist/style.css",
     "predocs": "node build/markdown.js",
     "docs": "cross-env NODE_ENV=docs webpack -p",
+    "postdocs": "t2k",
     "pages": "./bin/docs.rb",
     "start": "node build/server.js",
-    "test": "jest"
+    "test": "jest",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afeiship/react-modal-manager.git"
   },
   "keywords": [
+    "boilerplate",
     "react",
-    "component"
+    "component",
+    "cra",
+    "template",
+    "webpack",
+    "sass",
+    "scss",
+    "docs",
+    "service-worker",
+    "sw"
   ],
   "author": "afei",
   "license": "MIT",
@@ -47,45 +59,45 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "@babel/register": "^7.11.5",
-    "@feizheng/next-offline-sw": "^1.0.2",
-    "@feizheng/next-replace-in-file": "^1.0.1",
-    "@feizheng/rake-git": "^1.2.1",
-    "@feizheng/react-github-corner": "^1.0.1",
-    "@feizheng/react-markdown-props": "^1.2.3",
-    "@feizheng/react-sw-update-tips": "^1.0.4",
-    "@feizheng/webpack-lib-kits": "^1.1.28",
-    "@testing-library/react": "^11.0.2",
-    "autoprefixer": "^9.8.6",
+    "@jswork/next-offline-sw": "^1.0.2",
+    "@jswork/next-replace-in-file": "^1.0.0",
+    "@jswork/react-demokit": "^1.0.2",
+    "@jswork/react-github-corner": "^1.0.0",
+    "@jswork/react-markdown-props": "^1.0.1",
+    "@jswork/react-sw-update-tips": "^1.0.0",
+    "@jswork/webpack-lib-kits": "^1.0.2",
+    "@testing-library/react": "^11.0.4",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-adapter-react-16": "^1.15.5",
     "express": "^4.17.1",
     "indent-string": "^4.0.0",
     "jest": "^26.4.2",
     "node-sass": "^4.14.1",
     "offline-plugin": "^5.0.7",
-    "prettier": "^2.1.1",
-    "react-modal": "^3.11.2",
+    "prettier": "^2.1.2",
+    "react-modal": "^3.12.1",
+    "release-it": "^14.2.1",
     "string-replace-webpack-plugin": "^0.1.3",
-    "webpack": "^4.44.1",
+    "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.1.3"
+    "webpack-merge": "^5.1.4"
   },
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "prop-types": "^15.7.2"
+    "prop-types": "^15.7.2",
+    "classnames": "^2.2.6"
   },
   "dependencies": {
-    "@feizheng/event-mitt": "^2.0.11",
-    "@feizheng/noop": "^1.0.0",
-    "classnames": "^2.2.6",
-    "object-assign": "^4.1.1"
+    "@jswork/event-mitt": "^1.0.2",
+    "@jswork/noop": "^1.0.0"
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   }
 }

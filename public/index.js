@@ -1,6 +1,6 @@
-import NxOfflineSw from '@feizheng/next-offline-sw';
-import ReactGithubCorner from '@feizheng/react-github-corner';
-import ReactSwUpdateTips from '@feizheng/react-sw-update-tips';
+import NxOfflineSw from '@jswork/next-offline-sw';
+import ReactGithubCorner from '@jswork/react-github-corner';
+import ReactSwUpdateTips from '@jswork/react-sw-update-tips';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactModalManager, { modal } from '../src/main';
