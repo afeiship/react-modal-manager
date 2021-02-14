@@ -20,17 +20,9 @@
     "url": "git+https://github.com/afeiship/react-modal-manager.git"
   },
   "keywords": [
-    "boilerplate",
     "react",
-    "component",
-    "cra",
-    "template",
-    "webpack",
-    "sass",
-    "scss",
-    "docs",
-    "service-worker",
-    "sw"
+    "modal",
+    "mamager"
   ],
   "author": "afei",
   "license": "MIT",

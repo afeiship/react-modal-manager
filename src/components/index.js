@@ -8,7 +8,7 @@ import ModalContext from './lib/context';
 
 const CLASS_NAME = 'react-modal-manager';
 
-export default class extends Component {
+export default class ReactModalManager extends Component {
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static propTypes = {
