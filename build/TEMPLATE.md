@@ -30,6 +30,10 @@ __GENERATE_DOCS__
 __GENERATE_DAPP__
   ```
 
+## todos
+- [ ] 在 dismiss 的时候，会有带一些data出去的需求
+- [ ] 在与其它的 @observer 组合的时候，会出现无法触发的情况
+
 ## documentation
 - https://afeiship.github.io/react-modal-manager/
 
