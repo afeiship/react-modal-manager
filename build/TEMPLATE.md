@@ -31,8 +31,9 @@ __GENERATE_DAPP__
   ```
 
 ## todos
-- [ ] 在 dismiss 的时候，会有带一些data出去的需求
-- [ ] 在与其它的 @observer 组合的时候，会出现无法触发的情况
+- [ ] 在 `dismiss` 的时候，会有带一些data出去的需求
+- [ ] 在与其它的 `@observe`r 组合的时候，会出现无法触发的情况
+- [ ] 在 `present/dismiss` 的时候，配合一下全局事件，这样就可以完美处理 `data` 里带 `callback` 的需求了
 
 ## documentation
 - https://afeiship.github.io/react-modal-manager/
