@@ -24,6 +24,11 @@ export default class {
     this.emit(`${name}:dismiss`);
   }
 
+  dismissAll(inNames){
+    const names = inNames || Object.keys(this.modals);
+    names.forEach(name =>this.dismiss(name))
+  }
+
   visible(inName) {
     const name = inName || this.name;
     return get(this.modals, `${name}.visible`, false);
