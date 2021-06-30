@@ -11,8 +11,8 @@ export default class {
 
   present(inName, inData) {
     const only = name && typeof name === 'object';
-    const name = inName || this.name;
-    const data = only ? name : inData || {};
+    const name = only ? this.name : inName;
+    const data = only ? inName : inData || {};
     this.modals[name] = { visible: true, data };
     this.context.setState({ modals: this.modals });
     this.emit(`${name}:present`);
