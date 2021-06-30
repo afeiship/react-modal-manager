@@ -1,6 +1,6 @@
 {
   "name": "@jswork/react-modal-manager",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A cool modal manager for react.",
   "main": "dist/index.js",
   "scripts": {
