@@ -10,7 +10,7 @@ export default class {
   }
 
   present(inName, inData) {
-    const only = name && typeof name === 'object';
+    const only = inName && typeof inName === 'object';
     const name = only ? this.name : inName;
     const data = only ? inName : inData || {};
     this.modals[name] = { visible: true, data };
