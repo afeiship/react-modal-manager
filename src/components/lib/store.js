@@ -15,14 +15,14 @@ export default class {
     const data = only ? inName : inData || {};
     this.modals[name] = { visible: true, data };
     this.context.setState({ modals: this.modals });
-    this.emit(`${name}:present`);
+    return this.emit(`${name}:present`);
   }
 
   dismiss(inName) {
     const name = inName || this.name;
     this.modals[name] = { visible: false, data: {} };
     this.context.setState({ modals: this.modals });
-    this.emit(`${name}:dismiss`);
+    return this.emit(`${name}:dismiss`);
   }
 
   visible(inName) {
