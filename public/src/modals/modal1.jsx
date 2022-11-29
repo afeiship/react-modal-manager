@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-// import connect from '@/components/lib/connect';
+import { useModal } from '../../../src/main';
 
 ReactModal.setAppElement('#root');
 
@@ -15,13 +15,15 @@ const customStyles = {
   }
 };
 export default (props) => {
+  const md = useModal();
   return (
     <ReactModal style={customStyles} isOpen={nx.$modal.visible('modal1')}>
       <p>I am modal - modal1</p>
       <button
         className="button"
         onClick={(e) => {
-          nx.$modal.dismiss('modal1');
+          console.log('close with useModal:', md);
+          md.$modal.dismiss('modal1');
         }}>
         Close
       </button>

@@ -68,7 +68,6 @@ export default class ReactModalManager extends Component<
 
   render() {
     const { children, context, ready } = this.props;
-    if (!context) return null;
     const callback = context;
     const keys = context.keys();
 

@@ -15,11 +15,7 @@ const context = viteRequireContext(moduleFiles);
 export default () => {
   return (
     <Container>
-      <ReactModalManager
-        context={context}
-        inject={(e) => {
-          nx.$modal = e;
-        }}>
+      <ReactModalManager context={context} harmony>
         <button
           onClick={() => {
             nx.$modal.present('modal1');

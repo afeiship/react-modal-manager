@@ -52,8 +52,7 @@ export default [
       banner(nx.rollupBanner()),
       image(),
       typescript({
-        rollupCommonJSResolveHack: true,
-        exclude: ['**/__tests__/**', '**/__stories__/**'],
+        tsconfig: 'tsconfig.build.json',
         clean: true
       }),
       commonjs({
