@@ -12,8 +12,6 @@ const Container = styled.div`
 const moduleFiles = import.meta.globEager('./modals/*.jsx');
 const context = viteRequireContext(moduleFiles);
 
-console.log(moduleFiles);
-
 export default () => {
   return (
     <Container>
