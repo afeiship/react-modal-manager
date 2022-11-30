@@ -61,6 +61,6 @@ export default class {
 
   data(inName) {
     const name = inName || this.name;
-    return get(this.modals, `${name}.data`, false);
+    return get(this.modals, `${name}.data`, null);
   }
 }
