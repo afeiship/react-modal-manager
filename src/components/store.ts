@@ -20,6 +20,11 @@ export default class {
     Object.assign(this, EventMitt);
   }
 
+  /**
+   * Show modal with given name and data.
+   * @param inName
+   * @param inData
+   */
   present(inName, inData): Promise<void> {
     const only = inName && typeof inName === 'object';
     const name = only ? this.name : inName;
@@ -33,6 +38,23 @@ export default class {
     });
   }
 
+  /**
+   * Present modal with given name and data then wait for dismiss.
+   * @param inName
+   * @param inData
+   */
+  presentWhen(inName, inData): Promise<void> {
+    const eventName = `${inName}:dismiss`;
+    return new Promise((resolve) => {
+      this.one(eventName, resolve);
+      this.present(inName, inData);
+    });
+  }
+
+  /**
+   * Dismiss modal with given name.
+   * @param inName
+   */
   dismiss(inName): Promise<void> {
     const name = inName || this.name;
     this.modals[name] = { visible: false, data: {} };
@@ -43,22 +65,38 @@ export default class {
     });
   }
 
+  /**
+   * Dismiss all the modals with given names or all.
+   * @param inNames
+   */
   dismissAll = (inNames): Promise<any> => {
     const names = Array.isArray(inNames) ? inNames : Object.keys(this.modals);
     return Promise.all(names.map((name) => this.dismiss(name)));
   };
 
+  /**
+   * Get modal data by given name, return visible status and data.
+   * @param inName
+   */
   value(inName) {
     const visible = this.visible(inName);
     const data = this.data(inName);
     return { visible, data };
   }
 
+  /**
+   * Get modal visible status by given name.
+   * @param inName
+   */
   visible(inName) {
     const name = inName || this.name;
     return get(this.modals, `${name}.visible`, false);
   }
 
+  /**
+   * Get modal data by given name.
+   * @param inName
+   */
   data(inName) {
     const name = inName || this.name;
     return get(this.modals, `${name}.data`, null);
