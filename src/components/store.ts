@@ -46,7 +46,10 @@ export default class {
   presentWhen(inName, inData): Promise<void> {
     const eventName = `${inName}:dismiss`;
     return new Promise((resolve) => {
-      this.one(eventName, resolve);
+      const res = this.on(eventName, () => {
+        resolve();
+        res.destroy();
+      });
       this.present(inName, inData);
     });
   }
