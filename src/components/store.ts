@@ -20,20 +20,38 @@ export default class {
     Object.assign(this, EventMitt);
   }
 
-  present(inName, inData) {
+  present(inName, inData): Promise<void> {
     const only = inName && typeof inName === 'object';
     const name = only ? this.name : inName;
     const data = only ? inName : inData || {};
     this.modals[name] = { visible: true, data };
-    this.context.setState({ modals: this.modals });
-    return this.emit(`${name}:present`);
+    return new Promise((resolve) => {
+      this.context.setState({ modals: this.modals }, () => {
+        this.emit(`${name}:present`);
+        resolve();
+      });
+    });
   }
 
-  dismiss(inName) {
+  dismiss(inName): Promise<void> {
     const name = inName || this.name;
     this.modals[name] = { visible: false, data: {} };
     this.context.setState({ modals: this.modals });
-    return this.emit(`${name}:dismiss`);
+    return new Promise((resolve) => {
+      this.emit(`${name}:dismiss`);
+      resolve();
+    });
+  }
+
+  dismissAll = (inNames): Promise<any> => {
+    const names = Array.isArray(inNames) ? inNames : Object.keys(this.modals);
+    return Promise.all(names.map((name) => this.dismiss(name)));
+  };
+
+  value(inName) {
+    const visible = this.visible(inName);
+    const data = this.data(inName);
+    return { visible, data };
   }
 
   visible(inName) {
@@ -45,9 +63,4 @@ export default class {
     const name = inName || this.name;
     return get(this.modals, `${name}.data`, false);
   }
-
-  dismissAll = (inNames) => {
-    const names = Array.isArray(inNames) ? inNames : Object.keys(this.modals);
-    names.forEach((name) => this.dismiss(name));
-  };
 }
