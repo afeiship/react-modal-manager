@@ -4,7 +4,3 @@ import { useModal } from './components/context';
 
 export default Component;
 export { useModal, Store };
-
-export interface NxStatic {
-  $modal: Store;
-}

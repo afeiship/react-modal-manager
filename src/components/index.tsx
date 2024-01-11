@@ -11,9 +11,9 @@ export type ReactModalManagerProps = {
    */
   className?: string;
   /**
-   * The model required context pattern.
+   * The model required store pattern.
    */
-  context?: any;
+  store?: any;
   /**
    * The only shared model name.
    */
@@ -44,7 +44,8 @@ export default class ReactModalManager extends Component<
   static version = '__VERSION__';
   static defaultProps = {
     inject: noop,
-    ready: true
+    ready: true,
+    name: 'nx-modal'
   };
 
   private readonly store: Store;
@@ -67,14 +68,13 @@ export default class ReactModalManager extends Component<
   };
 
   render() {
-    const { children, context, ready } = this.props;
-    const callback = context;
-    const keys = context.keys();
+    const { children, store, ready } = this.props;
+    const keys = Object.keys(store);
 
     return (
       <ModalContext.Provider value={{ $modal: this.store }}>
         {children}
-        {ready && keys.map((item) => React.createElement(callback(item).default, { key: item }))}
+        {ready && keys.map((item) => React.createElement(store[item], { key: item }))}
       </ModalContext.Provider>
     );
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactModalManager from '../../src/main';
 import styled from 'styled-components';
-import viteRequireContext from '@jswork/vite-require-context';
+import { scanVite } from '@jswork/scan-modules';
 import '@jswork/next';
 
 const Container = styled.div`
@@ -9,13 +9,13 @@ const Container = styled.div`
   margin: 30px auto 0;
 `;
 
-const moduleFiles = import.meta.globEager('./modals/*.jsx');
-const context = viteRequireContext(moduleFiles);
+const moduleFiles = import.meta.glob('./modals/*.jsx', { eager: true });
+const stores = scanVite(moduleFiles, { modules: '/modals/' });
 
 export default () => {
   return (
     <Container>
-      <ReactModalManager context={context} harmony>
+      <ReactModalManager store={stores} harmony>
         <button
           onClick={() => {
             nx.$modal.present('modal1');
