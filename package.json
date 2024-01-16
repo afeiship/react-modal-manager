@@ -1,7 +1,7 @@
 {
   "name": "@jswork/react-modal-manager",
   "homepage": "https://js.work",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A cool modal manager for react.",
   "license": "MIT",
   "main": "dist/index.js",
