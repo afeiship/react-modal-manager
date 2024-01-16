@@ -25,7 +25,7 @@ export default class {
    * @param inName
    * @param inData
    */
-  present(inName, inData): Promise<void> {
+  present(inName, inData): Promise<void> | void {
     const only = inName && typeof inName === 'object';
     const name = only ? this.name : inName;
     const data = only ? inName : inData || {};
@@ -43,7 +43,7 @@ export default class {
    * @param inName
    * @param inData
    */
-  presentWhen(inName, inData): Promise<void> {
+  presentWhen(inName, inData): Promise<void> | void {
     const eventName = `${inName}:dismiss`;
     return new Promise((resolve) => {
       this.once(eventName, resolve);
@@ -55,7 +55,7 @@ export default class {
    * Dismiss modal with given name.
    * @param inName
    */
-  dismiss(inName): Promise<void> {
+  dismiss(inName): Promise<void> | void {
     const name = inName || this.name;
     this.modals[name] = { visible: false, data: {} };
     this.context.setState({ modals: this.modals });
@@ -69,7 +69,7 @@ export default class {
    * Dismiss all the modals with given names or all.
    * @param inNames
    */
-  dismissAll = (inNames): Promise<any> => {
+  dismissAll = (inNames): Promise<any> | void => {
     const names = Array.isArray(inNames) ? inNames : Object.keys(this.modals);
     return Promise.all(names.map((name) => this.dismiss(name)));
   };
