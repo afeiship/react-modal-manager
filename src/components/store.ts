@@ -27,7 +27,7 @@ export default class {
    */
   present(inName: string, inData?): Promise<void> | void {
     const only = inName && typeof inName === 'object';
-    const name = only ? this.name : inName;
+    const name = (only ? this.name : inName) as string;
     const data = only ? inName : inData || {};
     this.modals[name] = { visible: true, data };
     return new Promise((resolve) => {
@@ -56,7 +56,7 @@ export default class {
    * @param inName
    */
   dismiss(inName: string): Promise<void> | void {
-    const name = inName || this.name;
+    const name = (inName || this.name) as string;
     this.modals[name] = { visible: false, data: {} };
     this.context.setState({ modals: this.modals });
     return new Promise((resolve) => {
