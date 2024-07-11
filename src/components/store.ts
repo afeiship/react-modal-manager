@@ -25,7 +25,7 @@ export default class {
    * @param inName
    * @param inData
    */
-  present(inName, inData): Promise<void> | void {
+  present(inName: string, inData?): Promise<void> | void {
     const only = inName && typeof inName === 'object';
     const name = only ? this.name : inName;
     const data = only ? inName : inData || {};
@@ -43,7 +43,7 @@ export default class {
    * @param inName
    * @param inData
    */
-  presentWhen(inName, inData): Promise<void> | void {
+  presentWhen(inName: string, inData?): Promise<void> | void {
     const eventName = `${inName}:dismiss`;
     return new Promise((resolve) => {
       this.once(eventName, resolve);
@@ -55,7 +55,7 @@ export default class {
    * Dismiss modal with given name.
    * @param inName
    */
-  dismiss(inName): Promise<void> | void {
+  dismiss(inName: string): Promise<void> | void {
     const name = inName || this.name;
     this.modals[name] = { visible: false, data: {} };
     this.context.setState({ modals: this.modals });
@@ -69,7 +69,7 @@ export default class {
    * Dismiss all the modals with given names or all.
    * @param inNames
    */
-  dismissAll = (inNames): Promise<any> | void => {
+  dismissAll = (inNames?: string[] | any): Promise<any> | void => {
     const names = Array.isArray(inNames) ? inNames : Object.keys(this.modals);
     return Promise.all(names.map((name) => this.dismiss(name)));
   };
@@ -78,7 +78,7 @@ export default class {
    * Get modal data by given name, return visible status and data.
    * @param inName
    */
-  value(inName) {
+  value(inName: string) {
     const visible = this.visible(inName);
     const data = this.data(inName);
     return { visible, data };
@@ -88,7 +88,7 @@ export default class {
    * Get modal visible status by given name.
    * @param inName
    */
-  visible(inName) {
+  visible(inName: string) {
     const name = inName || this.name;
     return get(this.modals, `${name}.visible`, false);
   }
@@ -97,7 +97,7 @@ export default class {
    * Get modal data by given name.
    * @param inName
    */
-  data(inName) {
+  data(inName: string) {
     const name = inName || this.name;
     return get(this.modals, `${name}.data`, null);
   }
