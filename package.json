@@ -73,13 +73,12 @@
     "@jswork/noop": "^1.0.0",
     "classnames": "^2.2.6"
   },
+  "peerDependencies": {
+    "lodash": "*"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "keywords": [
-    "react",
-    "modal",
-    "mamager"
-  ]
+  "keywords": ["react", "modal", "mamager"]
 }
