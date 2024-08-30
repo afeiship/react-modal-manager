@@ -1,7 +1,7 @@
 {
   "name": "@jswork/react-modal-manager",
   "homepage": "https://js.work",
-  "version": "1.2.12",
+  "version": "1.2.13",
   "description": "A cool modal manager for react.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -80,5 +80,9 @@
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "keywords": ["react", "modal", "mamager"]
+  "keywords": [
+    "react",
+    "modal",
+    "mamager"
+  ]
 }
