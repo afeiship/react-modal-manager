@@ -1,4 +1,4 @@
-import { get } from 'lodash';
+import objectPath from 'object-path';
 import EventMitt from '@jswork/event-mitt';
 
 export default class {
@@ -90,7 +90,7 @@ export default class {
    */
   visible(inName: string) {
     const name = inName || this.name;
-    return get(this.modals, `${name}.visible`, false);
+    return objectPath.get(this.modals, `${name}.visible`, false);
   }
 
   /**
@@ -99,6 +99,6 @@ export default class {
    */
   data(inName: string) {
     const name = inName || this.name;
-    return get(this.modals, `${name}.data`, null);
+    return objectPath.get(this.modals, `${name}.data`, null);
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component, HTMLAttributes } from 'react';
-import noop from '@jswork/noop';
 import Store from './store';
 import { ModalContext } from './context';
 
@@ -43,7 +42,6 @@ export default class ReactModalManager extends Component<
   static displayName = CLASS_NAME;
   static version = '__VERSION__';
   static defaultProps = {
-    inject: noop,
     ready: true,
     name: 'nx-modal'
   };
@@ -55,7 +53,7 @@ export default class ReactModalManager extends Component<
     const { inject, name } = inProps;
     this.state = { modals: {} };
     this.store = new Store(this.state.modals, this, name);
-    inject(this.store);
+    inject?.(this.store);
     this.processHarmony();
   }
 
