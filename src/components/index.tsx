@@ -12,7 +12,11 @@ export type ReactModalManagerProps = {
   /**
    * The model required store pattern.
    */
-  store?: any;
+  modules?: any;
+  /**
+   * The eager loaded modules to ignore ready state.
+   */
+  eagerModules?: any;
   /**
    * The only shared model name.
    */
@@ -66,13 +70,15 @@ export default class ReactModalManager extends Component<
   };
 
   render() {
-    const { children, store, ready } = this.props;
-    const keys = Object.keys(store);
+    const { children, modules, eagerModules, ready } = this.props;
+    const keys = Object.keys(modules);
+    const eagerKeys = Object.keys(eagerModules || {});
 
     return (
       <ModalContext.Provider value={{ $modal: this.store }}>
         {children}
-        {ready && keys.map((item) => React.createElement(store[item], { key: item }))}
+        {ready && keys.map((item) => React.createElement(modules[item], { key: item }))}
+        {eagerKeys.map((item) => React.createElement(eagerModules[item], { key: item }))}
       </ModalContext.Provider>
     );
   }

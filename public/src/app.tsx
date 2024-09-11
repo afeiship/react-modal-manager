@@ -10,12 +10,12 @@ const Container = styled.div`
 `;
 
 const moduleFiles = import.meta.glob('./modals/*.jsx', { eager: true });
-const stores = scanVite(moduleFiles, { modules: '/modals/' });
+const modules = scanVite(moduleFiles, { modules: '/modals/' });
 
 export default () => {
   return (
     <Container>
-      <ReactModalManager store={stores} harmony>
+      <ReactModalManager modules={modules} harmony>
         <button
           onClick={() => {
             nx.$modal.present('modal1');
